@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="YxtPage-doc" {{#if (isRTL global_config.locale) }}dir="rtl"{{/if}}>
   <head>
+    <meta name="robots" content="nofollow, noindex" />
     <script>
       {{#babel}}
       if (window.name == 'overlay') {
@@ -25,9 +26,14 @@
     <link rel="dns-prefetch" href="//dynm.mktgcdn.com">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     <link rel="dns-prefetch" href="//assets.sitescdn.net">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css" />
     
     {{> layouts/preload-fonts }}
-
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
       document.documentElement.lang = {{#if global_config.locale}}"{{global_config.locale}}"{{else}}'en'{{/if}};
     </script>
@@ -189,5 +195,22 @@
       </div>
       {{> layouts/footer }}
     </div>
+       <script>
+      
+        var action = "click";
+        var speed = "500";
+
+        $(document).ready(function () {
+            // Question handler
+            $('li.q').on(action, function () {
+                // Get next element
+                $(this).next()
+                    .slideToggle(speed)
+                    // Select all other answers
+                    .siblings('li.a')
+                    .slideUp();
+            });
+        });
+    </script>
   </body>
 </html>

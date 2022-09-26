@@ -1,0 +1,13 @@
+<script type = "text/javascript">
+window.onload = loadPlaceholder();
+function loadPlaceholder() {
+  var fullURL = "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/placeholdertext?&api_key=b262ae7768eec3bfa53bfca6d48e4000&v=20200308&resolvePlaceholders=true&entityTypes=ce_placeholderUpdate";
+	fetch(fullURL).then(response => response.json()).then(result => {
+        if (!result.errors) {
+				console.log(result.response);
+			var description = result.response.name;
+			document.getElementById("yxt-SearchBar-input--SearchBar").placeholder =  description;
+		} else {}
+    });
+}
+</script>

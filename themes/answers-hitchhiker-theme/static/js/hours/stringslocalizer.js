@@ -40,12 +40,13 @@ export default class HoursStringsLocalizer {
   getLocalizedTime(yextTime) {
     let time = new Date();
     time.setHours(Math.floor(yextTime / 100));
-    time.setMinutes(yextTime % 100);
-
+    time.setMinutes(yextTime % 100);  
+    
     return time.toLocaleString(this._locale, {
-      hour: 'numeric',
+      hour: '2-digit',
       minute: 'numeric',
-      ...this._isTwentyFourHourClock && { hourCycle: this._isTwentyFourHourClock ? 'h24' : 'h12' }
+      ...this._isTwentyFourHourClock && { hourCycle: this._isTwentyFourHourClock ? 'h24' : 'h24' }
     });
+
   }
 }

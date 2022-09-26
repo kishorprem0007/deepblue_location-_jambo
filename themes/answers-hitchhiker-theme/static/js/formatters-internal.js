@@ -19,10 +19,14 @@ export function address(profile) {
   }
   return components__address__i18n__addressForCountry({
     profile: profile,
-    derivedData: {address: {stateName: ''}},
+    derivedData: { address: { stateName: '' } },
     regionAbbr: true,
   });
 }
+
+
+
+
 
 export function phoneLink(profile, key = 'mainPhone') {
   if (!profile[key]) {
@@ -31,12 +35,17 @@ export function phoneLink(profile, key = 'mainPhone') {
   return `tel:${profile[key]}`;
 }
 
+
+
+
 export function phoneDisplay(profile, key = 'mainPhone') {
   if (!profile[key]) {
     return '';
   }
   return `${profile[key]}`;
 }
+
+
 
 export function nationalizedPhoneDisplay(profile, key = 'mainPhone') {
   if (!profile[key]) {
@@ -98,7 +107,7 @@ export function toKilometers(profile, key = 'd_distance', displayUnits = 'km', l
   locale = _getLocaleWithDashes(locale) || _getDocumentLocale();
   const distanceInKilometers = profile[key] / 1000; // Convert meters to kilometers
   return new Intl.NumberFormat(locale,
-    { style: 'decimal', maximumFractionDigits: 1, minimumFractionDigits: 1})
+    { style: 'decimal', maximumFractionDigits: 1, minimumFractionDigits: 1 })
     .format(distanceInKilometers) + ' ' + displayUnits;
 }
 
@@ -382,7 +391,7 @@ function _splitStringOnIndex(str, index) {
 function _replaceUrlHost(url, host) {
   const splitUrl = url.split('://');
   const urlAfterHost = splitUrl[1].slice(splitUrl[1].indexOf('/'));
-  return splitUrl[0] + '://'  + host + urlAfterHost;
+  return splitUrl[0] + '://' + host + urlAfterHost;
 }
 
 /**
@@ -417,15 +426,14 @@ export function truncate(str, limit = 250, trailing = '...', sep = ' ') {
   return truncated;
 }
 
-/**
- * Returns a string, a formatted representation of the open hours status
- * for the given profile.
- * @param {Object} profile The profile information of the entity
- * @param {String} key Indicates which profile property to use for hours
- * @param {boolean} isTwentyFourHourClock Use 24 hour clock if true, 12 hour clock
- *                  if false. Default based on locale if undefined.
- * @param {String} locale The locale for the time string
- */
+
+
+
+
+
+
+
+
 export function openStatus(profile, key = 'hours', isTwentyFourHourClock, locale) {
   if (!profile[key]) {
     return '';
@@ -442,46 +450,160 @@ export function openStatus(profile, key = 'hours', isTwentyFourHourClock, locale
     .create(hours.openStatus);
 }
 
+
+
+
+
+
+
+
+
+export function openStatusa(profile, key = 'takeoutHours', isTwentyFourHourClock, locale) {
+  if (!profile[key]) {
+    return '';
+  }
+
+  const hours = HoursTransformer.transform(profile[key], profile.timeZoneUtcOffset);
+  if (!hours) {
+    return '';
+  }
+
+  const hoursLocalizer = new HoursStringsLocalizer(
+    _getLocaleWithDashes(locale) || _getDocumentLocale(), isTwentyFourHourClock);
+  return new OpenStatusMessageFactory(hoursLocalizer)
+    .create(hours.openStatus);
+}
+
+
+
+
+
+
+export function openStatusb(profile, key = 'deliveryHours', isTwentyFourHourClock, locale) {
+  if (!profile[key]) {
+    return '';
+  }
+
+  const hours = HoursTransformer.transform(profile[key], profile.timeZoneUtcOffset);
+  if (!hours) {
+    return '';
+  }
+
+  const hoursLocalizer = new HoursStringsLocalizer(
+    _getLocaleWithDashes(locale) || _getDocumentLocale(), isTwentyFourHourClock);
+  return new OpenStatusMessageFactory(hoursLocalizer)
+    .create(hours.openStatus);
+}
+
+
+
+
+
+
+
+
+
+
 /**
- * Returns the markup for a formatted hours list for the given field on the profile.
- *
- * @param {Object} profile The profile information of the entity
- * @param {Object} opts
- * {
- *   isTwentyFourHourClock {@link boolean} Use 24 hour clock if true, 12 hour clock if
- *                                         false. Default based on locale if undefined.
- *   disableOpenStatus: {@link boolean}   If specified, displays the hours intervals
- *                                      rather than the open status string for today
- *   firstDayInList: {@link string} A day name in English, e.g. "SUNDAY", this day will be
- *                                  displayed first in the list
- * }
- * @param {String} key Indicates which profile property to use for hours
- * @param {String} locale The locale for the time string
+ * hourslist
  */
 export function hoursList(profile, opts = {}, key = 'hours', locale) {
-    if (!profile[key]) {
-      return '';
-    }
+  if (!profile[key]) {
+    return '';
+  }
 
-    const hours = HoursTransformer.transform(profile[key], profile.timeZoneUtcOffset);
-    if (!hours) {
-      return '';
-    }
+  const hours = HoursTransformer.transform(profile[key], profile.timeZoneUtcOffset);
+  if (!hours) {
+    return '';
+  }
 
-    const firstDayInList = opts.firstDayInList && opts.firstDayInList.toUpperCase();
-    const isDayValid = Object.values(DayNames).includes(firstDayInList);
-    if (firstDayInList && !isDayValid) {
-      console.warn(`Invalid day: "${opts.firstDayInList}" provided as "firstDayInList" for the hoursList formatter`);
-    }
-    const standardizedOpts = {
-      disableOpenStatus: opts.disableOpenStatus || false,
-      firstDayInList: isDayValid && firstDayInList
-    };
+  const firstDayInList = opts.firstDayInList && opts.firstDayInList.toUpperCase();
+  const isDayValid = Object.values(DayNames).includes(firstDayInList);
+  if (firstDayInList && !isDayValid) {
+    console.warn(`Invalid day: "${opts.firstDayInList}" provided as "firstDayInList" for the hoursList formatter`);
+  }
+  const standardizedOpts = {
+    disableOpenStatus: opts.disableOpenStatus || false,
+    firstDayInList: isDayValid && firstDayInList
+  };
 
-    const hoursLocalizer = new HoursStringsLocalizer(
-      _getLocaleWithDashes(locale) || _getDocumentLocale(), opts.isTwentyFourHourClock);
-    return new HoursTableBuilder(hoursLocalizer).build(hours, standardizedOpts);
+  const hoursLocalizer = new HoursStringsLocalizer(
+    _getLocaleWithDashes(locale) || _getDocumentLocale(), opts.isTwentyFourHourClock);
+  return new HoursTableBuilder(hoursLocalizer).build(hours, standardizedOpts);
 }
+
+
+
+
+
+
+
+/**
+ * deliveryHourslist
+ */
+export function deliveryHourslist(profile, opts = {}, key = 'deliveryHours', locale) {
+  if (!profile[key]) {
+    return '';
+  }
+
+  const hours = HoursTransformer.transform(profile[key], profile.timeZoneUtcOffset);
+  if (!hours) {
+    return '';
+  }
+
+  const firstDayInList = opts.firstDayInList && opts.firstDayInList.toUpperCase();
+  const isDayValid = Object.values(DayNames).includes(firstDayInList);
+  if (firstDayInList && !isDayValid) {
+    console.warn(`Invalid day: "${opts.firstDayInList}" provided as "firstDayInList" for the hoursList formatter`);
+  }
+  const standardizedOpts = {
+    disableOpenStatus: opts.disableOpenStatus || false,
+    firstDayInList: isDayValid && firstDayInList
+  };
+
+  const hoursLocalizer = new HoursStringsLocalizer(
+    _getLocaleWithDashes(locale) || _getDocumentLocale(), opts.isTwentyFourHourClock);
+  return new HoursTableBuilder(hoursLocalizer).build(hours, standardizedOpts);
+}
+
+
+
+
+
+
+/**
+ * takeoutHourslist
+ */
+export function takeoutHourslist(profile, opts = {}, key = 'takeoutHours', locale) {
+  if (!profile[key]) {
+    return '';
+  }
+
+  const hours = HoursTransformer.transform(profile[key], profile.timeZoneUtcOffset);
+  if (!hours) {
+    return '';
+  }
+
+  const firstDayInList = opts.firstDayInList && opts.firstDayInList.toUpperCase();
+  const isDayValid = Object.values(DayNames).includes(firstDayInList);
+  if (firstDayInList && !isDayValid) {
+    console.warn(`Invalid day: "${opts.firstDayInList}" provided as "firstDayInList" for the hoursList formatter`);
+  }
+  const standardizedOpts = {
+    disableOpenStatus: opts.disableOpenStatus || false,
+    firstDayInList: isDayValid && firstDayInList
+  };
+
+  const hoursLocalizer = new HoursStringsLocalizer(
+    _getLocaleWithDashes(locale) || _getDocumentLocale(), opts.isTwentyFourHourClock);
+  return new HoursTableBuilder(hoursLocalizer).build(hours, standardizedOpts);
+}
+
+
+
+
+
+
 
 export { generateCTAFieldTypeLink };
 
@@ -493,7 +615,7 @@ export { generateCTAFieldTypeLink };
  *                  returns the price value without formatting
  */
 export function price(fieldValue = {}, locale) {
-  const localeForFormatting =  _getLocaleWithDashes(locale) || _getDocumentLocale() || 'en';
+  const localeForFormatting = _getLocaleWithDashes(locale) || _getDocumentLocale() || 'en';
   const price = fieldValue.value && parseFloat(fieldValue.value);
   const currencyCode = fieldValue.currencyCode && fieldValue.currencyCode.split('-')[0];
   if (!price || isNaN(price) || !currencyCode) {
@@ -519,13 +641,13 @@ export function priceRange(defaultPriceRange, countryCode) {
   if (countryCode) {
     const currencySymbol = getSymbolFromCurrency(LocaleCurrency.getCurrency(countryCode));
     if (currencySymbol) {
-      return defaultPriceRange.replace(/\$/g, currencySymbol); 
+      return defaultPriceRange.replace(/\$/g, currencySymbol);
     }
   }
   const { region, language } = parseLocale(_getDocumentLocale());
   const currencySymbol = getSymbolFromCurrency(LocaleCurrency.getCurrency(region || language));
   if (currencySymbol) {
-    return defaultPriceRange.replace(/\$/g, currencySymbol); 
+    return defaultPriceRange.replace(/\$/g, currencySymbol);
   }
   console.warn('Unable to determine currency symbol from '
     + `ISO country code "${countryCode}" or locale "${_getDocumentLocale()}".`);
@@ -546,7 +668,7 @@ export function highlightField(fieldValue, matchedSubstrings = []) {
   // We must first sort the matchedSubstrings by ascending offset. 
   const sortedMatches = matchedSubstrings.slice()
     .sort((match1, match2) => match1.offset - match2.offset);
-  
+
   let processedFieldValueIndex = 0;
   sortedMatches.forEach(match => {
     const { offset, length } = match;
@@ -572,7 +694,7 @@ export function getYoutubeUrl(videos = []) {
   const videoUrl = videos[0]?.video?.url;
   const youtubeVideoId = videoUrl?.split('watch?v=')[1];
   const youtubeVideoUrl = youtubeVideoId
-    ? 'https://www.youtube.com/embed/' + youtubeVideoId + '?enablejsapi=1' 
+    ? 'https://www.youtube.com/embed/' + youtubeVideoId + '?enablejsapi=1'
     : null;
   return youtubeVideoUrl;
 }

@@ -1,12 +1,788 @@
-.Answers
-{
-  // insert Answers scss here e.g.
-  //&-nav {
-  //  padding-top: 32px;
-  //}
+
+
+// accordian for small screen
+.accordion-container {
+            position: relative;
+        }
+        .set-acc {
+            position: relative;
+        }
+
+        .set-acc>a {
+            display: block;
+        
+        }
+        .content-acc {
+            display: none;
+        }
+
+
+
+.Answers-results .yxt-AlternativeVerticals-noResultsInfo{ font-size: 16px!important;}
+
+
+// update image
+.images-bx .HitchhikerLocationStandard-imgWrapper img {
+    border-radius: 10px 0px 10px 0px !important;
+    height: 122px;
+    object-fit: cover;
 }
 
-.Overlay
-{
-  // Insert Overlay styling here
+
+
+
+// scroll bar
+#scroll-bar-custom {
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+.yxt-SearchBar .Icon-image, .yxt-SearchBar-buttonImage .Icon svg {
+  height: 2em;
+  width: 2em;
+  fill: #a2a0a0;
+}
+.Answers-nav .yxt-Nav-container{ border-bottom: none!important;}
+.card-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 10px;
+  .title-address{
+    width: 30%;
+    padding: 10px;
+    .HitchhikerLocationStandard-address{
+      margin: 15px 0;
+      opacity: 0.8;
+    }
+  }
+  .list-services{
+    width: 40%;
+    text-align: left;
+    padding: 10px;
+    .block{
+      display: inline-block;
+      width: 100%;
+      vertical-align: bottom;
+      margin-bottom: 10px;
+      &.delivery{
+        .img-wrapper{
+          img{
+            max-height: 32px;
+          }
+        }
+      }
+    }
+    h4{
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--yxt-color-brand-primary);
+    }
+    .img-wrapper{
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      img{
+        width: auto;
+        display: inline-block;
+        max-height: 24px;
+      }
+      &.wifi{
+        img{
+          max-height: 20px;
+        }
+      }
+    }
+    
+  }
+  .list-action{
+    width: 30%;
+    padding: 10px;
+    .HitchhikerLocationStandard-distance{
+      margin-bottom: 50px;
+    }
+  }
+  
+}
+
+.faq-sec{font-family: 'optimanormal';}
+.AnswersVerticalGrid .Answers-resultsWrapper{ flex-direction: column;}
+.menu-img { box-shadow: 1px 6px 8px #ededed;}
+.menu-img .HitchhikerMenuItemStandard-imgWrapper{ width: 100%;}
+.menu-img .HitchhikerMenuItemStandard-imgWrapper img{ height: 200px; object-fit: cover; object-position: top; width: 100%;}
+.menu-img .HitchhikerProductProminentImage-body { padding: 10px;}
+.menu-img .HitchhikerMenuItemStandard-ctasWrapper { display: flex; justify-content: start;  margin-left: 0;}
+.menu-img .HitchhikerMenuItemStandard-primaryCTA{margin-left: 0;}
+.menu-img a.HitchhikerCTA.js-HitchhikerCTA {background: #115eac; color: #fff; font-size: 13px; padding: 6px 9px;}
+.menu-img a.HitchhikerCTA.js-HitchhikerCTA .HitchhikerCTA-iconWrapper{ padding-right: 4px;}
+.HitchhikerCTA-iconWrapper{ padding-right: 4px;}
+.job-sec { box-shadow: 1px 6px 8px #ededed;}
+.job-sec .HitchhikerJobStandard-imgWrapper {display: flex; align-items: center; width:100%; justify-content: center; z-index: 1; height: 140px; text-align: center; padding: 10px 0px; position: relative; margin-right: 0;}
+.job-sec .HitchhikerJobStandard-imgWrapper:before {content: ""; width: 100%; position: absolute; background-color: #0b4696; height: 100%; z-index: 0;}
+.job-sec .HitchhikerJobStandard-imgWrapper img{z-index: 1;  border-radius: 50%; object-fit: cover;  width: 120px; height: 120px;}
+.job-sec .HitchhikerJobStandard-title{ color:#0b4696; }
+.job-sec .HitchhikerProductProminentImage-body { padding: 10px;}
+.job-sec .HitchhikerMenuItemStandard-ctasWrapper { display: flex; justify-content: start;  margin-left: 0;}
+.job-sec .HitchhikerMenuItemStandard-primaryCTA{margin-left: 0;}
+.job-sec a.HitchhikerCTA.js-HitchhikerCTA {background: #115eac; color: #fff; font-size: 13px; padding: 6px 9px;}
+.job-sec a.HitchhikerCTA.js-HitchhikerCTA .HitchhikerCTA-iconWrapper{ padding-right: 8px;}
+
+.locator-sec{    display: flex; justify-content: space-between;  flex-direction: row;  width: 100%;}
+.locator-sec .HitchhikerLocationStandard-topRow { font-family: 'optimanormal';  display: flex;  flex-direction: column;     justify-content: normal;  width: 100%;}
+.locator-sec .HitchhikerLocationCard-content{  width: 50%;}
+
+.locator-sec .HitchhikerCTA-iconLabel{ font-size: 13px; font-weight: normal; }
+
+.locator-sec .HitchhikerLocationCard-closeCardButtonWrapper { width:auto; text-align: right;}
+.locator-sec .HitchhikerLocationStandard-hoursText{ margin-top: 0; margin-bottom: 10px;}
+.locator-sec h2{ font-size: 16px; font-weight: bold; color:#0b4696;}
+.yxt-Card:nth-child(odd) .restaurants {
+    background: #f9f9f9;
+}
+.address-hrs {
+    width: 100%;
+    display: flex;     flex-wrap: wrap;
+}
+.HitchhikerLocationStandard-hoursText:first-child {
+    margin-top:0px;
+}
+.cta-location a{background: #115eac; color: #fff;   
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+
+  transition: transform .1s; font-size: 14px; padding: 6px 12px;}
+.cta-location a:hover{color: #fff; text-decoration: none;  }
+.cta-location a:hover {
+    -ms-transform: scale(1.09);
+    -webkit-transform: scale(1.09);
+    transform: scale(1.09);
+}
+
+.yxt-Results--faqs .yxt-Results-items .yxt-Card{     border-top: 1px solid #d8d8d8!important;
+    margin-bottom: 10px!important;}
+.locator-sec .HitchhikerLocationStandard-title{ line-height: 22px;   width: calc(100% - 10px);}
+
+
+
+	.card-sec{   width: 100%; display: flex; padding: 20px; }
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+
+
+
+
+/*
+ Styling
+*/
+
+.yxt-Pagination-link:focus, .yxt-Pagination-link:hover {  background-color: #115eac!important;}
+
+.tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 15px;
+    border: 1px solid #f3f3f3;
+    cursor: pointer;
+   font-family: "optimanormal";
+    width: 32.33%; color: #57585A;
+    text-align: center;
+    }
+
+
+
+.tabset > label:hover,
+.tabset > input:focus + label {
+  color: #06c;
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  background: #06c;
+}
+
+.tabset > input:checked + label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+  color: #fff;
+    background: #3979ba;
+}
+
+.tab-panel {padding: 30px 0;}
+.tab-panels {
+    background: #3979ba;
+    padding: 0 10px;
+    color: #fff; width: calc(100% - 10px);
+}
+
+.tab-panels .HitchhikerLocationStandard-hoursText{  color: #fff!important; font-family: "optimanormal"; font-size: 16px;}
+
+.heading-bx a{  color: #115eac!important;}
+
+
+.tabs {    display: flex;   padding: 10px 20px 0px 20px;}
+
+.tabs .tablinks {border: 1px solid #ccc;     padding: 6px 6px;
+   text-align: left; position: relative;  width: 33.3%; padding: 8px 6px;    margin: 0 2px;  font-family: "optimanormal"; font-size: 16px;   font-size: 16px;}
+.tabs .tablinks:hover{background: #115eac; color: #fff;  border: 1px solid #115eac;}
+.tabs .tablinks:hover:after {    width: 0;
+    content: "";
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+        }
+
+
+.tabs .tablinks:after{    width: 0;
+    content: "";
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #626262;
+    position: absolute;
+    right: 5%; 
+    top: 50%;
+    transform: translate(-50%,-50%);}
+.tabs .tablinks.active:after {    width: 0;
+    content: "";
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(180deg);
+    }
+
+.tablinks.active {  background: #115eac;  color: #fff;  border: 1px solid #115eac;     -webkit-transition: opacity 0.3s linear 0s, top 0.3s linear;
+    -moz-transition: opacity 0.3s linear 0s, top 0.3s linear;
+    -ms-transition: opacity 0.3s linear 0s, top 0.3s linear;
+    -o-transition: opacity 0.3s linear 0s, top 0.3s linear;
+    transition: opacity 0.3s linear 0s, top 0.3s linear;}
+.tabs .tablinks:last-child {
+    margin-right: 0;
+}
+.wrapper_tabcontent{  padding:0px 20px 0px 20px; background: #115eac;  color: #fff;     -webkit-transition: opacity 0.3s linear 0s, top 0.3s linear;
+    -moz-transition: opacity 0.3s linear 0s, top 0.3s linear;
+    -ms-transition: opacity 0.3s linear 0s, top 0.3s linear;
+    -o-transition: opacity 0.3s linear 0s, top 0.3s linear;
+    transition: opacity 0.3s linear 0s, top 0.3s linear;  margin: 0px 20px 20px 20px;}
+.innertab-content{padding-top:20px; padding-bottom:20px;  }
+
+table.c-hours-details {    width: 100%; font-family: "optimanormal";}
+
+.c-hours-details-row {
+    padding-top: 0px;
+    line-height: 28px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #4c8ccd;
+}
+
+
+/*
+ Demo purposes only
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+}
+
+.tabset {
+  max-width: 65em; padding: 0 20px;
+}
+
+
+.card-box{ position: relative; padding-bottom: 15px;}
+
+.card-box .HitchhikerLocationStandard-address{ margin-top: 5px;  color: #57585A;}
+.card-box .HitchhikerLocationStandard-phone{ margin-top: 5px; font-size: 16px; font-family: 'optimanormal'; font-weight: normal;   color: #57585A;}
+.card-box .HitchhikerLocationStandard-phone a{ color:#57585A; }
+.card-box .HitchhikerLocationStandard-phone a:hover{ color:#57585A; text-decoration: underline; }
+
+.distance{ position: absolute; right:25px; top: 10px; }
+
+.cta-box { display: flex; padding-right:20px;}
+
+//.cta-box a{ color: #115EAC; font-size: 14px; }
+.address-hrs .HitchhikerLocationStandard-titleLink{     text-shadow: none; color: #115EAC;}
+
+
+
+.yxt-Results--restaurants .yxt-Card:nth-child(odd) {
+    background: #fbfcff;
+}
+
+.card-box .HitchhikerLocationStandard{ background-color: transparent!important;}
+
+.AnswersVerticalMap .Answers-resultsWrapper{ flex-direction: column-reverse;}
+
+.AnswersVerticalMap .Answers-resultsColumn{width: 100% !important;}
+.AnswersVerticalMap .Answers-map {     width:100%!important;}
+
+.images-bx{
+    width:100%; margin-right: 10px;
+}
+
+
+.images-bx .HitchhikerLocationStandard-imgWrapper {
+    width: 100%!important;     margin-top: 0; 
+}
+.images-bx .HitchhikerLocationStandard-imgWrapper img {border-radius: 10px 0px 10px 0px!important;     box-shadow: 0 4px 6px rgb(17 94 172 / 27%);
+}
+
+  
+// toggle
+      .faq-sec {padding-top: 10px;   padding-left: 20px;  padding-bottom: 10px;   padding-right: 20px;}
+
+
+.heading-bx {
+    margin: 20px 20px 0;
+}
+
+.c-hours-details-row-day{padding-left: 12px;}
+.c-hours-details-row.is-today {
+    background: #003f7e;
+}
+
+
+.readmore-button .HitchhikerLocationCard-ctasWrapper{ margin-left:0px!important; }
+
+.Answers-resultsColumn .mCustomScrollBox:hover .mCSB_scrollTools{    opacity: 100!important; }
+.Answers-resultsColumn .mCSB_scrollTools{ opacity: 100!important;}
+.mCSB_scrollTools .mCSB_draggerContainer {
+    background-color: #e5eaeb;
+    border-radius: 5px!important;
+    width: 10px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #115eac!important;
+    border-radius: 5px!important;
+    opacity: 1!important;
+    width: 6px!important;
+}
+
+.mCSB_draggerRail {
+    background-color: #e5eaeb!important;
+}
+
+
+
+.faq-sec .container {
+  max-width: 1240px;
+}
+.faq-blocks {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-shadow: 3.5px 6.06px 10px rgba(1,1,1,0.18);
+  --tw-shadow-colored: 3.5px 6.06px 10px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+@media (min-width: 1024px) {
+
+  .faq-sec { padding:10px 20px;}
+
+  .faq-blocks {
+    margin-top: 2.75rem;
+    border-radius: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    --tw-shadow: 3.5px 6.06px 21px rgba(1,1,1,0.18);
+    --tw-shadow-colored: 3.5px 6.06px 21px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+.faq-blocks .left-faq {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+
+  .faq-blocks .left-faq {
+    width: calc(50% - 30px);
+  }
+}
+.faq-blocks .right-faq {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+
+  .faq-blocks .right-faq {
+    width: calc(50% - 30px);
+  }
+}
+.faq-blocks .faq-block {
+  width: 100%;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(16 16 106 / var(--tw-border-opacity));
+  --tw-border-opacity: 0.1;
+}
+.faq-blocks .faq-block:last-child {
+  border-bottom-width: 0px;
+}
+.faq-blocks .faq-block h4 {
+  position: relative;
+  margin-top: 0px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 2.5rem;
+  font-family: "Raleway", Georgia, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(37 37 37 / var(--tw-text-opacity));
+}
+@media (min-width: 1024px) {
+
+  .faq-blocks .faq-block h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+}
+.faq-blocks .faq-block h4:after {
+  position: absolute;
+  top: 1rem;
+  right: 0px;
+  height: 1.25rem;
+  width: 1.25rem;
+
+  background-size: contain;
+  --tw-content: '';
+  content: var(--tw-content);
+}
+@media (min-width: 1024px) {
+
+  .faq-blocks .faq-block h4:after {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+}
+
+
+
+.tabs .tablinks:first-child {
+    margin-left: 0;
+}
+.faq-blocks .faq-block .faq-content {
+  max-height: 0px;
+  overflow: hidden;
+}
+.faq-blocks .faq-block.opened .faq-content {
+  max-height: 24rem;
+  padding-bottom: 1.25rem;
+}
+
+.tabcontent {
+  display: none;
+  min-height: 180px;
+  
+}
+.tabcontent.active {
+  transition: all 1s ease;
+  display: block;
+}
+.tabcontent p {
+  color: #000;
+  margin: 0;
+  padding: 0;
+  line-height: 28px;
+  font-weight: 100;
+  transition: all 1s ease;
+  animation: fadeEffect 0.6s ease;
+  width: 100%;
+  font-size: 16px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.address-bx {  width: 100%;  align-items: center;    display: flex;}
+.address-bx svg{  margin-right: 8px; width: 30px; height: 30px;   display: flex;}
+
+.phn-bx{  width: 100%;  align-items: center;   display: flex;}
+.phn-bx svg{  margin-right: 8px;  width: 30px; height: 30px;    display: flex;}
+
+.heading-bx a:hover { color: #57585f !important; text-decoration: none!important;}
+
+.c-hours-details-row-intervals { padding: 0 40px;}
+.c-hours-details-row-intervals-instance {
+    display: flex;
+    justify-content: space-between;
+}
+span.c-hours-details-row-intervals-instance-open {
+    width:auto;
+    display: inline-block;
+}
+span.c-hours-details-row-intervals-instance-separator {
+    width: auto;
+    display: inline-block;
+}
+span.c-hours-details-row-intervals-instance-close {
+    width: auto;
+    display: inline-block;
+}
+
+
+
+@media only screen and (min-width:991px) {
+  .AnswersVerticalMap .Answers-resultsWrapper{ flex-direction:row;}
+
+.AnswersVerticalMap .Answers-resultsColumn{width: 520px !important;}
+.AnswersVerticalMap .Answers-map {width: calc(100% - 520px)!important;}
+
+.images-bx{
+    width:200px; margin-right: 10px;
+}
+
+.locator-sec{width: calc(100% - 195px);  }
+
+
+
+}
+
+
+@media only screen and (min-width:1360px) {
+  
+.AnswersVerticalMap .Answers-resultsColumn{width: 600px !important;}
+.AnswersVerticalMap .Answers-map {width: calc(100% - 600px)!important;}
+
+
+}
+
+
+
+
+
+
+ @media only screen and (min-width: 1024px) and (max-width: 1440px)  {
+.HitchhikerCTA-iconLabel{ font-size: 14px;}
+.locator-sec h2 { font-size: 14px;}
+.locator-sec .Hours-openNow{ font-size: 14px;}
+.locator-sec .Hours-statusText--current{ font-size: 14px;}
+ }
+
+ @media only screen and (min-width: 1024px) and (max-width: 1280px)  {
+.address-hrs { flex-direction: column;}
+ }
+
+ @media only screen and (min-width: 992px) and (max-width: 1199px)  {
+.locator-sec .HitchhikerCTA-iconLabel {  font-size: 12px;}
+.readmore-button .HitchhikerLocationCard-ctasWrapper {
+    margin-right: 5px !important;
+}
+
+.HitchhikerCTA-icon, .HitchhikerCTA-icon .Icon svg {   width: 16px;    height: 16px;}
+
+
+ }
+
+ @media only screen and (min-width: 768px) and (max-width: 1023px)  {
+.locator-sec {flex-direction: column;}
+.locator-sec .HitchhikerLocationStandard-distance{ text-align: left;}
+ }
+@media only screen and (max-device-width: 1440px) {
+
+.address-hrs .HitchhikerLocationStandard-infoCol {
+    width: 300px!important;
+}
+}
+
+@media only screen and (max-device-width: 1359px) {
+
+
+}
+
+
+
+
+
+@media only screen and (max-device-width: 1024px) {
+.locator-sec .HitchhikerLocationStandard-topRow{ width: 100%;}
+}
+
+
+
+@media only screen and (max-width:991px) {
+.cta-box { display: flex; justify-content: start; padding-right: 10px;}
+.cta-location{ margin-right: 10px;}
+
+.tabs{     padding: 10px 20px 0px 20px;}
+.wrapper_tabcontent { padding:0px 20px 0px 20px; background: #115eac;  color: #fff;  margin: 0px 20px 20px 20px;}
+
+
+.images-bx {    width: 280px;    margin-right: 10px;}
+
+
+}
+
+@media only screen and (min-width:767px) {
+.accordion-container{ display: none;}
+}
+
+
+
+
+@media only screen and (max-width:767px) {
+// .AnswersVerticalMap .Answers-map { display: block!important;}
+// .AnswersVerticalMap .Answers-map {  min-height: 40vh;}
+
+.tabs .tablinks:hover {
+    background: inherit;
+    color: inherit;
+    border: 1px solid #ccc;
+}
+.tabs .tablinks:hover:after { border-top: 5px solid #626262;}
+.tablinks.active {
+    background: #115eac!important;
+    color: #fff!important;
+    border: 1px solid #115eac!important;
+    }
+.tabs .tablinks.active:after{ border-top: 5px solid #fff!important;}
+
+.faq-sec{padding-left: 10px; padding-right: 10px;}
+.tabs {padding-left: 10px; padding-right: 10px;}
+.wrapper_tabcontent{margin-left: 10px; margin-right: 10px;}
+
+
+.AnswersVerticalMap .Answers-resultsColumn{  height: 500px;}
+
+.for-desktop{ display: none;}
+.set-acc{ flex-direction: column;}
+
+.set-acc .tablinks{ width: 100%;}
+.content-acc{ padding: 0px;  margin-left:0;  margin-right:0;}
+.set-acc.active .tablinks{     background: #115eac!important;
+    color: #fff!important;
+    border: 1px solid #115eac!important;}
+
+
+.set-acc.active .tablinks:after {
+    width: 0;
+    content: "";
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+}
+
+@media only screen and (max-width:579px) {
+  body {  padding: 10px;}
+
+.tabs .tablinks{ width: 100%;}
+.card-box .HitchhikerLocationStandard{flex-direction: column;}
+.HitchhikerLocationStandard-topRow{ margin-top:10px; }
+.tabs .tablinks{    font-size: 16px;}
+
+.images-bx {width: 100%;}
+
+.tabs .tablinks:after{right:5%; }
+
+
+input#yxt-SearchBar-input--SearchBar {
+    font-size: 15px;
+}
+.c-hours-details-row.is-today {  font-size: 14px;}
+
+ .HitchhikerLocationStandard-title{ width: calc(100% - 75px)!important;}
+
+.c-hours-details-row-intervals { padding: 0 10px;}
+
+
+// update image
+.images-bx .HitchhikerLocationStandard-imgWrapper img {
+    border-radius: 10px 0px 10px 0px !important;
+    height: auto;
+    object-fit: cover;
+}
+
+
+}
+
+
+@media only screen and (max-width:420px) {
+body {  padding: 10px;}
+
+.c-hours-details-row.is-today {  font-size: 14px;}
+
+#scroll-bar-custom { white-space: inherit;}
+
+
+}
+
+@media only screen and (max-width:399px) {
+
+.tabs .tablinks{    font-size: 15px;}
+
+}
+
+.accordion-container .active .content-acc{
+  display: block;
 }
